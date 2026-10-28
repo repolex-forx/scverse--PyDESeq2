@@ -8,7 +8,7 @@
     {
       "@id": "https://repolex.ai/r/scverse/PyDESeq2/commit/2ca3b74c9b2b994b44c071f17ec76ad1cf1595e9",
       "git:hexsha": "2ca3b74c9b2b994b44c071f17ec76ad1cf1595e9",
-      "repolex:parseStatus": "metadata_complete"
+      "repolex:parseStatus": "ast_complete"
     },
     {
       "@id": "https://repolex.ai/r/scverse/PyDESeq2/commit/ad263105104e3ebdcb7a9dd489e2dedef3d75494",
