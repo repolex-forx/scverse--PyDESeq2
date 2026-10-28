@@ -1,1 +1,146 @@
-Initializing
+# Repolex Knowledge Graph of scverse/PyDESeq2
+
+RDF knowledge graph data for [scverse/PyDESeq2](https://github.com/scverse/PyDESeq2), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download scverse/PyDESeq2
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── 2ca3b74c9b2b994b44c071f17ec76ad1cf1595e9
+│   │       └── chunk-001.nq.gz
+│   └── repolex
+│       └── 2ca3b74c9b2b994b44c071f17ec76ad1cf1595e9
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 00ad6a6ea9418df96256615a564065e38c8332ea.nq.gz
+│   ├── 00e07b511f2fc23a2a1e3186eeef586a91d486c5.nq.gz
+│   ├── 013433d252f4041069f710ed6aadb01d37c64b09.nq.gz
+│   ├── 13f1c11d711ee8eb453b0db4417821bae186fb5e.nq.gz
+│   ├── 199f2edb1c093a283b34e8ba7ba17556e2f835f5.nq.gz
+│   ├── 1c5a3a8c4d461a3fc23aedd62a4a0dd1981514c4.nq.gz
+│   ├── 1f3ee738055072becf493e25210d4f236fcb5bf3.nq.gz
+│   ├── 20c5abbf443cca7e0a399fe01c573a61c4b42120.nq.gz
+│   ├── 2348466462c562bea5c57d0f8cc817f54db36d21.nq.gz
+│   ├── 28e158cd52ec51a1e7a1b2b60741d1f0daa5b081.nq.gz
+│   ├── 2add84677b11246d77f765895df3e66e1037334a.nq.gz
+│   ├── 366942868efbd2612b93df16b58a0d80b5905319.nq.gz
+│   ├── 36d1874618b1d0099c4d192c8a90500d69bcc723.nq.gz
+│   ├── 3a403efc666be96dc5b68680d542ff9578c603d6.nq.gz
+│   ├── 3c8d7e7822cbfc7ed81ac22a62d4c0f271e9c4d1.nq.gz
+│   ├── 3ce1d78a117c4c8b1b614c6109375044d1f88568.nq.gz
+│   ├── 4469d02f01a5b314d88f5732378196cbb0a16aa4.nq.gz
+│   ├── 467b7113890699de991fbea2701a61bbb1120a45.nq.gz
+│   ├── 47c27c846d6bf826cee950bbe976405090834eff.nq.gz
+│   ├── 48b6cfd79d092d90bb5702f9be9ff6a88b93f415.nq.gz
+│   ├── 4cee8a96d965d8d26e15c4ca76f2a1bc57c444be.nq.gz
+│   ├── 4d47bb6fa2bd7a2bdadf485f02e4711682e7e691.nq.gz
+│   ├── 539a9809ce78098b7a2ae9ed7d33c14d6b75409a.nq.gz
+│   ├── 55b100e7621209a0e38c90b6654a183d71ab28a9.nq.gz
+│   ├── 56736a5c1f1e3fd3739f1d7b291c1d30c337420f.nq.gz
+│   ├── 57721cc72e071560f61388d6784dfc5a73f21e25.nq.gz
+│   ├── 5b62547f9aef3da3a38806baf365ea8c059675d6.nq.gz
+│   ├── 614bf12d14e9de0c56802445e0632929b18565c0.nq.gz
+│   ├── 6222fe207d5d2e4d48567b3494887ff4250b0d13.nq.gz
+│   ├── 66678e378b55a7e2b28d2087164af8999aff39cb.nq.gz
+│   ├── 67eb948d72ad9ee53fd1cbe38e72bcccaa753334.nq.gz
+│   ├── 6cc0848375dd1417c3a718a258afc80b99312450.nq.gz
+│   ├── 6cd2fe261fab198bb8cd9512ba07aebed6b6a678.nq.gz
+│   ├── 7ae13bd3cab753f3ca64f7904a4715012834b883.nq.gz
+│   ├── 7f4f55608e2e16e92118f2c1119255d7c681ee7f.nq.gz
+│   ├── 894c8568abd6292ee5505f1931f96c380f360607.nq.gz
+│   ├── 89ce355fb176994db556defc144d82354120deb1.nq.gz
+│   ├── 8f09dabd32b8841d21b0989f69957c740a30db27.nq.gz
+│   ├── 8fdd90711cf30a647773d20e3211b7f6b84862b2.nq.gz
+│   ├── 9021f3d9cbb61f5e52573edf095335517f2452a1.nq.gz
+│   ├── 914ad69d5046bebb8743ad4f7a9f003284d56925.nq.gz
+│   ├── 9a69da73504dab446fa04e050f362e2833ce9e66.nq.gz
+│   ├── 9f8f2208c4bdc0f0b0cafb4c0d0b5c79d32c32da.nq.gz
+│   ├── a4afee517ca5dd4014cd92235dba4f645ea9dff7.nq.gz
+│   ├── aa058dfe2965c6cfd56429d71e2a5be5a73e55cb.nq.gz
+│   ├── ac08864d875df8c4eaee50e0145fb42014b0335b.nq.gz
+│   ├── b20ed84b49b7043736aa6237146e8e911cc7c6c3.nq.gz
+│   ├── b496a61c0de2580b59408fbe502213af15ca0484.nq.gz
+│   ├── b98363e6ad62885be95760b0f347c8f7a5592deb.nq.gz
+│   ├── c006cf07fcb38a0980d1b7600aeb299c36ad47d6.nq.gz
+│   ├── c6bb2bb3fcc11fc1348db47546d1741ac3136294.nq.gz
+│   ├── caaeb4f73220343cf55564c4b747c6434c231fd8.nq.gz
+│   ├── cc32eda8a90cc20e1e9fdc7039b83be81e3d1445.nq.gz
+│   ├── cc37d638e926d0f3d3aed66523ba48f0719b92e9.nq.gz
+│   ├── d0c0e2917651ab1d38f689317e32f463c392c3d2.nq.gz
+│   ├── d48a451ea47e2c73d1d2cf94b65c993b3cde604d.nq.gz
+│   ├── d4cc1957b17d661f5b432a22f5cb6b7d03a3f6fc.nq.gz
+│   ├── da5b28fba3d000db9c6e66fffb2407b0356b524a.nq.gz
+│   ├── e049f9a74711c0a7d46bf6d90aa0fe3c1a216151.nq.gz
+│   ├── e2c537914bd77800e569bf38b56d0c6856d97bbc.nq.gz
+│   ├── e530c07387b7426e5e42e861458e7aead3f5afec.nq.gz
+│   ├── e69de29bb2d1d6434b8b29ae775ad8c2e48c5391.nq.gz
+│   ├── eaf3a52dc30e9fac8d39290aba2080a64a6e294c.nq.gz
+│   ├── ed78636333a4556574f3876009c595821e6443e4.nq.gz
+│   ├── f73302e1a3df89dcd9bf66aa3d843d4d682be3a0.nq.gz
+│   ├── fae5b16410efa441487293efc76a4fbd6684229e.nq.gz
+│   └── fecec82b20f986e793821bf5af45b62e13bcf5db.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── 2ca3b74c9b2b994b44c071f17ec76ad1cf1595e9.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+13 directories, 75 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[scverse/PyDESeq2](https://github.com/scverse/PyDESeq2)
+
+---
+*Parsed on 2026-10-28 by [repolex](https://repolex.ai)*
